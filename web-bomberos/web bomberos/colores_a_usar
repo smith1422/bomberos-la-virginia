@@ -1,0 +1,17 @@
+fondos
+backgroup = #000746
+___________
+letras
+blanco = #ffffff
+amarillo = #fffa00
+rojo = #ea0000
+______________
+targetas
+letras = #fffdde
+fondo =#000746
+___________
+pie de pagina
+fondo =  #000746
+iconos = 
+___________
+fon de la barra inicio =rgba(1, 5, 46, 0.58)
