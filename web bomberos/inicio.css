@@ -1,0 +1,495 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+
+main {
+  height: 300dvh;
+  padding-top: 70px;
+}
+
+/* ---------- BARRA DE NAVEGACIÓN ---------- */
+header {
+  background-color: rgba(1, 5, 46, 0.58);
+  width: 100vw;
+  height: 95px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+header img {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-links a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #ff0000, #ff6600, #ffff00);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.nav-links a:hover {
+  color: #ff4500;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.logo img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+
+/* Hero con video a pantalla completa */
+#hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+#hero .overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*texto sobre video*/
+
+#hero .overlay h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+
+/* carrusel con presentacion de bomberos */
+main {
+  position: relative;
+  z-index: 2;
+  background-color: #111;
+  color: #eee;
+}
+.carrusel-bomberos {
+  width: 100%;
+  height: 90vh;
+  background-color: #000; /* opcional */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+/* Evita que las imágenes del carrusel hereden el estilo global */
+.carrusel-bomberos img {
+  position: static;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.carrusel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carrusel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+  align-items: center;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.slide img {
+  max-height: 90%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+@keyframes focusIn {
+  0% { filter: blur(8px); opacity: 0; }
+  100% { filter: blur(0); opacity: 1; }
+}
+
+#hero .overlay h1 {
+  animation: focusIn 2s ease forwards;
+}
+
+.footer {
+  background-color: #0a0a0a;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 3px solid red;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-info,
+.footer-contacto,
+.footer-redes {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-titulo {
+  font-size: 1.2rem;
+  color: #ffcc00;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 10px auto 0 auto;
+  filter: brightness(1.1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  animation: fadeInLogo 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+/* Animación suave para aparecer */
+@keyframes fadeInLogo {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.footer-contacto h4,
+.footer-redes h4 {
+  color: #ff4500;
+  margin-bottom: 10px;
+}
+
+.footer-contacto p,
+.footer-contacto a {
+  margin: 5px 0;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-contacto a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #888;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+
+
+.mision-vision-section {
+  background: url('ruta-de-tu-imagen-principal.jpg') no-repeat center center/cover;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.mision-vision-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.contenido-interno {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.titulo-seccion {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.tarjeta {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-10px);
+}
+
+.contenido-texto {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 30px;
+  height: 100%;
+}
+
+.contenido-texto h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+/* Fondos individuales para tarjetas */
+.mision-tarjeta {
+  background: url('recursos_inicio/fondo/fondo-mision.jpg') no-repeat center center/cover;
+}
+
+.vision-tarjeta {
+  background: url('recursos_inicio/fondo/vision-fondo.avif') no-repeat center center/cover;
+}
+
+/* Animación scroll */
+.animar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.titulo-equipo {
+  text-align: center;
+  padding: 0px 20px 5px;
+  background-color: #111; /* Puedes usar un fondo oscuro o dejarlo transparente */
+  color: #fff;
+}
+
+.titulo-equipo h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.titulo-equipo p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.unete-equipo {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('ruta/a/tu/imagen.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 10px 10px;
+  position: relative;
+}
+.contenido-llamado {
+  max-width: 800px;
+  margin: auto;
+}
+.titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.subtitulo {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+.boton-unete {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 30px;
+  transition: background-color 0.3s;
+}
+.boton-unete:hover {
+  background-color: darkred;
+}
+.beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+.beneficios li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.frase-final {
+  font-style: italic;
+  font-size: 1.2rem;
+}
