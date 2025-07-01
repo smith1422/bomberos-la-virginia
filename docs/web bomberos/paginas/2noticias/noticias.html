@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noticias | Bomberos</title>
+  <link rel="stylesheet" href="noticias.css" />
+</head>
+<body>
+
+  <!-- ==================================
+       BARRA DE NAVEGACIÓN
+  =====================================-->
+  <header>
+    <nav class="nav-container">
+      <!-- Enlaces a la izquierda -->
+      <div class="nav-links left">
+        <a href="../1inicio/inicio.html">Inicio</a>
+        <a href="../3servicios/servicios.html">Servicios</a>
+      </div>
+
+      <!-- Logo central -->
+      <div class="logo">
+        <img src="../recursos_generales/logo.png" alt="Logo Bomberos" />
+      </div>
+
+      <!-- Enlaces a la derecha -->
+      <div class="nav-links right">
+        <a href="../4al_dia/al_dia.html">Al día</a>
+        <a href="../5contactanos/contactanos.html">Contáctenos</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================================
+       NOTICIA DESTACADA
+  =====================================-->
+  <section class="noticia-destacada">
+    <div class="contenido">
+      <h1>Incendio estructural controlado en el centro del municipio</h1>
+      <p>El cuerpo de bomberos respondió rápidamente al llamado de emergencia, evitando la propagación del fuego a viviendas vecinas.</p>
+      <a href="#" class="btn-vermas">Ver más</a>
+    </div>
+  </section>
+
+  <!-- ==================================
+       NOTICIAS RECIENTES
+  =====================================-->
+  <section class="noticias-recientes">
+    <h2>Últimas emergencias atendidas</h2>
+    <div class="rejilla-noticias">
+
+      <!-- Tarjeta de noticia 1 -->
+      <div class="tarjeta-noticia">
+        <img src="img/incendio-casa.jpg" alt="Incendio en vivienda" />
+        <div class="info">
+          <span class="fecha">25 mayo 2025</span>
+          <h3>Incendio en vivienda del barrio San José</h3>
+          <p>Una cocina en llamas fue controlada por el equipo en menos de 10 minutos.</p>
+          <a href="#" class="btn-vermas">Ver más</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta de noticia 2 -->
+      <div class="tarjeta-noticia">
+        <img src="img/accidente-vial.jpg" alt="Accidente de tránsito" />
+        <div class="info">
+          <span class="fecha">24 mayo 2025</span>
+          <h3>Accidente vehicular en la vía a La Virginia</h3>
+          <p>Colisión entre moto y automóvil dejó dos heridos leves.</p>
+          <a href="#" class="btn-vermas">Ver más</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta de noticia 3 -->
+      <div class="tarjeta-noticia">
+        <img src="./recursos_noticias/guardar_por_fechas_noticias/titulo25.jpg" alt="25 de mayo" />
+        <div class="info">
+          <span class="fecha">25 mayo 2025</span>
+          <h3>Título de la noticia</h3>
+          <p>La noche anterior se atendió accidente de tránsito en el barrio Balsillas; peatón arrollado por motociclista, fue trasladado al hospital del municipio con apoyo del cuadrante de Policía.</p>
+          <a href="#" class="btn-vermas">Ver más</a>
+        </div>
+      </div>
+
+      <!-- Puedes duplicar las tarjetas anteriores para agregar más noticias -->
+
+    </div>
+  </section>
+
+  <!-- ==================================
+       MODAL EMERGENTE
+  =====================================-->
+  <div id="modalNoticia" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <img id="modalImagen" src="" alt="Noticia grande" />
+      <h3 id="modalTitulo"></h3>
+      <span id="modalFecha"></span>
+      <p id="modalDescripcion"></p>
+    </div>
+  </div>
+
+  <!-- ==================================
+       SCRIPTS
+  =====================================-->
+  <script src="noticias.js"></script>
+
+</body>
+</html>
