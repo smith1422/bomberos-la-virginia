@@ -1,4 +1,6 @@
-// Animación con IntersectionObserver
+/* ==========================================
+   ANIMACIÓN CON INTERSECTION OBSERVER
+========================================== */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -9,7 +11,9 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-// Carrusel funcional
+/* ==========================================
+   CARRUSEL FUNCIONAL
+========================================== */
 const track = document.querySelector(".carrusel-track");
 const slides = Array.from(document.querySelectorAll(".slide"));
 const nextBtn = document.querySelector(".next");
@@ -17,34 +21,49 @@ const prevBtn = document.querySelector(".prev");
 
 let currentSlide = 0;
 
+/**
+ * Actualiza la posición del carrusel al slide actual
+ */
 function updateSlide() {
   const slideWidth = slides[0].getBoundingClientRect().width;
   track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 
+// Botón siguiente
 nextBtn.addEventListener("click", () => {
   currentSlide = (currentSlide + 1) % slides.length;
   updateSlide();
 });
 
+// Botón anterior
 prevBtn.addEventListener("click", () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   updateSlide();
 });
 
-window.addEventListener("resize", updateSlide); // ajuste responsive
+// Ajuste responsivo
+window.addEventListener("resize", updateSlide);
+
+// Inicializa el carrusel en la posición correcta
 updateSlide();
 
+/* ==========================================
+   ANIMACIÓN DE ELEMENTOS CON SCROLL
+========================================== */
 const elementos = document.querySelectorAll('.animar');
 
-  const mostrar = () => {
-    elementos.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
-        el.classList.add('visible');
-      }
-    });
-  };
+/**
+ * Añade la clase 'visible' a los elementos cuando aparecen en el viewport
+ */
+const mostrar = () => {
+  elementos.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+};
 
-  window.addEventListener('scroll', mostrar);
-  window.addEventListener('load', mostrar);
+// Detectar scroll y carga inicial para activar animaciones
+window.addEventListener('scroll', mostrar);
+window.addEventListener('load', mostrar);
